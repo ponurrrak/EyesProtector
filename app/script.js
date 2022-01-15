@@ -10,8 +10,9 @@ class App extends React.Component {
       timeToChange: 0,
       timer: null,
     };
+    this.state = {...this.stateDefaults};
     this.timeBase = 20;
-    this.state = this.stateDefaults;
+    this.audioPlayer = new Audio('./sounds/bell.wav');
   }
 
   convertTimeToString(seconds) {
@@ -27,7 +28,7 @@ class App extends React.Component {
         timeToChange: timeToChange - 1,
       });
     } else {
-      new Audio('./sounds/bell.wav').play();
+      this.audioPlayer.play();
       this.runApp();
     }
   }
