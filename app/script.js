@@ -34,7 +34,7 @@ class App extends React.Component {
   }
 
   runApp() {
-    const { isWorkingTime, timeToChange, timer } = this.state;
+    const { isWorkingTime, timer } = this.state;
     this.setState({
       isStarted: true,
       isWorkingTime: !isWorkingTime,
